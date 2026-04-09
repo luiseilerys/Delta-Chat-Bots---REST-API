@@ -79,6 +79,28 @@ pip install -r requirements.txt
 
 If needed, use `pip3` instead of `pip`.
 
+## Deployment Options
+
+This project can be run in multiple environments:
+
+### Local Development
+Follow the installation steps above and run with `python ./main.py serve`
+
+### Google Colab
+Use the included [`colab_notebook.ipynb`](colab_notebook.ipynb) to run the bot in Google Colab with ngrok tunneling for public access.
+
+[📓 View Colab Notebook Guide](colab_notebook.ipynb)
+
+### Render (Cloud Hosting)
+Deploy to Render using the included configuration files. See detailed instructions in [`RENDER_DEPLOYMENT.md`](RENDER_DEPLOYMENT.md).
+
+[☁️ View Render Deployment Guide](RENDER_DEPLOYMENT.md)
+
+**Quick Deploy to Render:**
+1. Push your code to GitHub/GitLab
+2. In Render, create a new "Blueprint" from your repo
+3. Render will automatically use `render.yaml` to configure everything
+
 ## Create A Bot Account
 
 Create a Delta Chat bot account with:
