@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: delta-chat-bot-api
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py serve
+    envVars:
+      - key: BOT_CLI_NAME
+        value: RenderBot
+      - key: LOG_LEVEL
+        value: info
+      - key: ENABLE_WEBHOOK
+        value: false
+      - key: API_HOST
+        value: 0.0.0.0
+      - key: API_PORT
+        value: 10000
+      - key: MEDIA_DIR
+        value: /tmp/DeltaChatBotsRestAPI_media
+      - key: API_KEY
+        generateValue: true
+        sync: false
+    healthCheckPath: /health
+    disk:
+      name: bot-data
+      mountPath: /root/.local/share/deltabot-cli
+      sizeGB: 1
